@@ -1,8 +1,14 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import { useMediaQuery } from "react-responsive";
+
 
 const MessageSection = () => {
+   const isMobile = useMediaQuery({
+    query: "(max-width: 768px)",
+  });
+
   useGSAP(() => {
     const firstMsgSplit = SplitText.create(".first-message", {
       type: "words",
@@ -59,7 +65,7 @@ const MessageSection = () => {
     });
     paragraphTl.from(paragraphSplit.words, {
       yPercent: isMobile ? 120 : 300,
-      rotate: 3,
+      rotate: isMobile ? 0 : 3,
       ease: "power1.inOut",
       duration: 1,
       stagger: 0.01,
