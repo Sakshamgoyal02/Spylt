@@ -58,7 +58,7 @@ const MessageSection = () => {
       },
     });
     paragraphTl.from(paragraphSplit.words, {
-      yPercent: 300,
+      yPercent: isMobile ? 120 : 300,
       rotate: 3,
       ease: "power1.inOut",
       duration: 1,
