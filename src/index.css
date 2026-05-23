@@ -230,29 +230,105 @@ body::-webkit-scrollbar {
       img:first-of-type {
         @apply size-[15vw];
       }
+
+      @media (max-width: 768px) {
+  .vd-pin-section {
+    height: 70vh;
+  }
+
+   .video-box {
+    height: 100%;
+  }
+
+  .video-box video {
+    height: 100%;
+    object-fit: cover;
+  }
+}
     }
   }
 
   .testimonials-section {
-  @apply bg-milk relative w-full md:h-[120dvh] h-screen overflow-hidden;
+  @apply bg-milk relative w-full overflow-hidden;
+}
 
-  .pin-box {
-    @apply absolute left-1/2 top-1/2 
-           -translate-x-1/2 -translate-y-1/2 
-           flex items-center justify-center w-full max-w-[1200px];
+.title-box {
+  @apply relative z-20
+         flex flex-col
+         items-center
+         justify-center
+         text-center
+         pt-8 md:pt-12;
+}
+
+.testimonials-section h1 {
+  @apply uppercase font-bold tracking-[-.25vw];
+}
+
+@media (min-width: 769px) {
+  .testimonials-section h1 {
+    @apply text-[9vw] leading-[88%];
   }
+}
 
-  .vd-card {
-    @apply w-[160px] md:w-[180px] xl:w-[200px]
-           aspect-[9/16]
-           flex-none
-           rounded-2xl
-           overflow-hidden
-           border-[6px] border-milk;
+@media (max-width: 768px) {
+  .testimonials-section h1 {
+    @apply text-[14vw] leading-[95%]
+           margin-top: 0 !important;
   }
+}
 
-  h1 {
-    @apply uppercase text-[18vw] md:text-[15vw] leading-[105%] tracking-[-.4vw] ml-[2vw] font-bold;
+.pin-box {
+  @apply hidden md:flex
+         relative
+         justify-center
+         items-start
+         w-full
+         mt-[-2vw];
+}
+
+.vd-card {
+  @apply w-[160px]
+         md:w-[180px]
+         xl:w-[200px]
+         aspect-[9/16]
+         flex-none
+         rounded-2xl
+         overflow-hidden
+         border-[6px]
+         border-milk;
+}
+
+.mobile-grid {
+  @apply grid
+         grid-cols-2
+         gap-4
+         px-4
+         pt-10
+         pb-10
+         relative
+         z-20;
+}
+
+.mobile-card {
+  @apply w-full
+         aspect-[9/16]
+         rounded-2xl
+         overflow-hidden
+         border-[4px]
+         border-milk;
+}
+
+@media (min-width: 769px) {
+  .testimonials-section {
+    height: 120dvh;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-section {
+    min-height: auto;
+    padding-bottom: 2rem;
   }
 }
 

@@ -9,13 +9,13 @@ const VideoPinSection = () => {
 
  useGSAP(() => {
   const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".vd-pin-section",
-      start: isMobile ? "top top" : "-15% top",
-      end: isMobile ? "120% top" : "200% top",
-      scrub: isMobile ? false : 1.5,
-      pin: true,
-    },
+  scrollTrigger: {
+  trigger: ".vd-pin-section",
+  start: isMobile ? "top top" : "-15% top",
+  end: isMobile ? "bottom top" : "200% top",
+  scrub: isMobile ? false : 1.5,
+  pin: !isMobile,
+},
   });
 
   // Animate ONLY on desktop
@@ -28,7 +28,9 @@ const VideoPinSection = () => {
 });
 
   return (
-    <section className="vd-pin-section">
+    <section   className={`vd-pin-section ${
+    isMobile ? "h-[65vh]" : "h-screen"
+  }`}>
       <div
         style={{
           clipPath: isMobile
