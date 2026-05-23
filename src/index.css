@@ -231,7 +231,9 @@ body::-webkit-scrollbar {
         @apply size-[15vw];
       }
 
-      @media (max-width: 768px) {
+    }
+    
+     @media (max-width: 768px) {
   .vd-pin-section {
     height: 70vh;
   }
@@ -245,7 +247,6 @@ body::-webkit-scrollbar {
     object-fit: cover;
   }
 }
-    }
   }
 
   .testimonials-section {
@@ -273,7 +274,7 @@ body::-webkit-scrollbar {
 
 @media (max-width: 768px) {
   .testimonials-section h1 {
-    @apply text-[14vw] leading-[95%]
+    @apply text-[14vw] leading-[95%];
            margin-top: 0 !important;
   }
 }
